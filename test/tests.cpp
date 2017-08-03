@@ -107,3 +107,8 @@ TEST_F(CmdLineParserTest, TestgetCmdOption){
   TestgetCmdOption(test_cmdline5, NUM_ARGS_IN_ARRAY(test_cmdline5), std::string("-p"), std::string("portnum"));	// detect -p
 }
 
+int main(int argc, char **argv){
+	::testing::InitGoogleTest(&argc, argv);
+	return RUN_ALL_TESTS();
+}
+

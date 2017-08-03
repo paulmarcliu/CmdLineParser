@@ -1,4 +1,9 @@
 # C/C++ Command Line Parser utility function
+Update:  8/3/17.
+Noticed that the gtest executable was not being produced.  The cmake file was not
+configured to produce both the executable and the gtest executable.  I must have 
+checked in the wrong version.  The gtest executable is CmdLineParser_test and the 
+executable is CmdLineParser.
 
 This is a small C++ utility classed used to parse the command line argument list
 and return the command line option parameter or just detect presence of the 
@@ -25,4 +30,23 @@ How To Build:
 4.  cmake --build . or make
 
 
+# How to install gtest in a few keystrokes
 
+Step 1:  Download from github
+cd ~
+git clone https://github.com/google/googletest.git
+
+Step 2: Configure tests
+cd ~/googletest
+mkdir build
+cd ~/googletest/build
+cmake ..
+
+Step 3:  Build libraries
+make
+
+Step 4:  Install libraries - need sudo
+sudo make install
+
+
+This should have installed the shared libraries in /usr/local/lib by default

@@ -26,7 +26,7 @@ include_directories(${COMMON_INCLUDES})
 #Gtest related
 enable_testing()
 set (PROJECT_TEST_NAME ${PROJECT_NAME_STR}_test)
-set (GTEST_LIBS_DIR /usr/lib)
+set (GTEST_LIBS_DIR /usr/local/lib)
 
 use_cxx11()
 
@@ -34,8 +34,7 @@ file(GLOB TEST_SRC_FILES ${PROJECT_SOURCE_DIR}/test/*.cpp)
 file(GLOB SRC_FILES ${PROJECT_SOURCE_DIR}/src/*.cpp)
 
 add_executable(${PROJECT_TEST_NAME} ${TEST_SRC_FILES} ${SRC_FILES})
-
-add_executable(main ${SRC_FILES})
+add_executable(${PROJECT_NAME_STR} ${SRC_FILES} ${PROJECT_SOURCE_DIR}/main/main.cpp)
 
 target_link_libraries(${PROJECT_TEST_NAME}
 	${GTEST_LIBS_DIR}/libgtest.a
